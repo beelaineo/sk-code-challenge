@@ -1,7 +1,7 @@
 
 ## Link Card Challenge
 
-Using the provided Sketch file, build Link Cards for the data provided in `HomeView.tsx`.
+Using the provided [Sketch file](https://www.dropbox.com/s/fupmqvi363vluft/SK-code-challenge.sketch?dl=0), build Link Cards for the data provided in `HomeView.tsx`.
 
 Spend an hour and a half working on this. Some things to keep in mind:
 
