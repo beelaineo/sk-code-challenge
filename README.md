@@ -33,3 +33,8 @@ Spend an hour and a half working on this. Some things to keep in mind:
 - [ ] Set up pages & views for Products, Collections, and Pages. These should just render the document's title and a "back to home" link.
 - [ ] Deploy your project to Vercel
 
+**When you are done,** push your changes back to your forked repo and send us a link!
+
+Thanks 😊
+
+
