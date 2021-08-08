@@ -8,4 +8,5 @@ export interface Document {
   description?: string
   featuredImage?: any
   coverImage?: any
+  minVariantPrice?: any
 }
