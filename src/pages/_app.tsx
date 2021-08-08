@@ -11,8 +11,20 @@ interface AppProps {
   router: NextRouter
 }
 
+const sans = '"Helvetica Neue", helvetica, sans-serif'
+const serif = '"Inferi", Georgia, serif'
+
 const theme = {
-  ...defaultTheme
+  ...defaultTheme,
+  fonts: {
+    display: serif,
+    body: serif,
+  },
+  fontFamilies: {
+    mono: `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
+    serif: serif,
+    sans: sans,
+  }
 }
 
 const App = (props: AppProps) => {
@@ -29,7 +41,7 @@ const App = (props: AppProps) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
         />
       </Head>
-      <x.main m={'10'}>
+      <x.main p={'10'} backgroundColor="gray-100" fontFamily={serif} fontWeight="light">
         <Component {...pageProps} />
       </x.main>
     </ThemeProvider>
