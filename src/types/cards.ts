@@ -6,4 +6,6 @@ export interface Document {
   tags?: string[]
   summary?: string
   description?: string
+  featuredImage?: object
+  coverImage?: object
 }
