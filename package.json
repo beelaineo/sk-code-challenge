@@ -24,6 +24,7 @@
     "vercel": "^23.0.1"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@xstyled/styled-components": "^3.0.3",
     "next": "^11.0.1",
     "react": "^17.0.2",
