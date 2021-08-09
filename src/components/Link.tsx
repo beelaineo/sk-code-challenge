@@ -48,6 +48,18 @@ const Link: React.FC<LinkProps> = (props) => {
           </x.a>
         </NextLink>
       )
+      case 'custom':
+        return (
+          <NextLink href={`/${encodeURIComponent(props.document.slug)}`}>
+            <x.a
+              color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
+              cursor="pointer"
+              textDecoration="underline"
+            >
+              {props.document.linkText ? props.document.linkText : 'read more'} <Arrow />
+            </x.a>
+          </NextLink>
+        )
     default:
       // @ts-ignore
       console.warn(`Link for type "${props.document._type}" is missing or nonexistent!`)

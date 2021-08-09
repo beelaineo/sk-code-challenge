@@ -1,8 +1,10 @@
 import * as React from 'react'
 import Link from './Link'
-import CardTags from './CardTags'
+import Tags from './CardTags'
+import VariantSwatches from './CardVariantSwatches'
 import { Document } from '../types'
 import { x } from '@xstyled/styled-components'
+import Image from 'next/image'
 
 interface LinkCardProps {
   document: Document
@@ -46,18 +48,38 @@ export const LinkCard: React.FC<LinkCardProps> = (props) => {
     fontSize={13}
     position="relative"
   >
-    {props.document.featuredImage ? <img width="90px" src={props.document.featuredImage.url} /> : null}
-    {props.document.coverImage ? <img width="90px" src={props.document.coverImage.url} /> : null}
-    
-    {props.document.tags && props.document.tags.length > 0 ? <CardTags document={props.document} /> : null}
+    {props.document.featuredImage ?
+      <Image
+      src={props.document.featuredImage.url}
+      height="90px" // Desired size with correct aspect ratio
+      width="90px" // Desired size with correct aspect ratio
+      alt={props.document.title}
+      />
+    : null}
 
-    <x.h2 mt={3} mb={1} fontSize={20} fontWeight="normal">{props.document.title}</x.h2>
+    {props.document.coverImage ?
+      <x.div
+        backgroundSize="cover"
+        backgroundPosition="center"
+        backgroundImage={`url(${props.document.coverImage.url})`}
+        w="90px"
+        h="90px"
+      />
+    : null}
     
+    {props.document.tags && props.document.tags.length > 0 ? <Tags document={props.document} /> : null}
+
+    <x.h2 mt={3} mb={1} fontSize={20} fontWeight="normal">
+      {props.document.title}
+      {props.document.variants && props.document.variants.length > 0 ? <VariantSwatches document={props.document} /> : null}
+    </x.h2>
+
     {props.document._type == 'product' ? <p>starting at {priceFormatter.format(props.document.minVariantPrice.amount/100).replace(/(\.|,)00$/g, '')}</p> : null}
-    {props.document._type == 'collection' ? <p>50+ items</p> : null}
+    {props.document.products ? <p>{props.document.products.length} items</p> : null}
+    {props.document.subtitle ? <p>{props.document.subtitle}</p> : null}
 
-    <div>{props.document.summary || props.document.description || null}</div>
-    <x.div mt={6} fontSize={16} textAlign="center">
+    <x.div my={3}>{props.document.summary || props.document.description || null}</x.div>
+    <x.div mt={3} fontSize={16} textAlign="center">
       <Link document={props.document} />
     </x.div>
   </x.div>
