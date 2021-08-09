@@ -1,10 +1,15 @@
 import * as React from 'react'
-import { CollectionDocument, PageDocument, ProductDocument, Document } from '../types'
+import {
+  CollectionDocument,
+  PageDocument,
+  ProductDocument,
+  Document,
+} from '../types'
 import { LinkCard } from '../components/LinkCard'
 import { x } from '@xstyled/styled-components'
 
 interface HomeViewProps {
-  linkData: ( CollectionDocument | PageDocument | ProductDocument )[]
+  linkData: (CollectionDocument | PageDocument | ProductDocument)[]
 }
 
 export const mockPageOne: PageDocument = {
@@ -26,25 +31,22 @@ const customCard: Document = {
     url: '/static/images/customze.png',
   },
   linkText: 'take the quiz',
-  summary: 'Our in-house team will produce a unique 3D render of your design so that you can see your ideas brought to life and make sure the details are just right.'
+  summary:
+    'Our in-house team will produce a unique 3D render of your design so that you can see your ideas brought to life and make sure the details are just right.',
 }
 
 export const HomeView: React.FC<HomeViewProps> = ({ linkData }) => {
   return (
     <>
-    <x.h1 fontSize="xl" fontWeight="medium">
-      Homepage
-    </x.h1>
-    <div>
-      {linkData.map(
-        (link) => (
+      <x.h1 fontSize="xl" fontWeight="medium">
+        Homepage
+      </x.h1>
+      <div>
+        {linkData.map((link) => (
           <LinkCard key={link._id} document={link} />
-        )
-      )}
-      {
-        <LinkCard document={customCard} />
-      }
-    </div>
+        ))}
+        {<LinkCard document={customCard} />}
+      </div>
     </>
   )
-    }
+}

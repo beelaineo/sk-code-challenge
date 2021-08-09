@@ -8,13 +8,9 @@ const ProductPage = () => {
   return router.query['product-slug']
 }
 
-
 // This function gets called at build time
 export async function getStaticProps() {
-  const products = [
-    mockProductOne,
-    mockProductTwo
-  ]
+  const products = [mockProductOne, mockProductTwo]
 
   // By returning { props: { posts } }, the Blog component
   // will receive `posts` as a prop at build time
@@ -26,10 +22,7 @@ export async function getStaticProps() {
 }
 // This function gets called at build time
 export async function getStaticPaths() {
-  const products = [
-    mockProductOne,
-    mockProductTwo
-  ]
+  const products = [mockProductOne, mockProductTwo]
   // Get the paths we want to pre-render based on posts
   const paths = products.map((product) => ({
     params: { 'product-slug': product.slug },

@@ -13,20 +13,24 @@ const Link: React.FC<LinkProps> = (props) => {
     case 'product':
       return (
         <>
-        <NextLink href={`/products/${encodeURIComponent(props.document.slug)}`}>
-          <x.a
-            color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
-            cursor="pointer"
-            textDecoration="underline"
+          <NextLink
+            href={`/products/${encodeURIComponent(props.document.slug)}`}
           >
-            view product <Arrow />
-          </x.a>
-        </NextLink>
+            <x.a
+              color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
+              cursor="pointer"
+              textDecoration="underline"
+            >
+              view product <Arrow />
+            </x.a>
+          </NextLink>
         </>
       )
     case 'collection':
       return (
-        <NextLink href={`/collections/${encodeURIComponent(props.document.slug)}`}>
+        <NextLink
+          href={`/collections/${encodeURIComponent(props.document.slug)}`}
+        >
           <x.a
             color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
             cursor="pointer"
@@ -48,21 +52,24 @@ const Link: React.FC<LinkProps> = (props) => {
           </x.a>
         </NextLink>
       )
-      case 'custom':
-        return (
-          <NextLink href={`/${encodeURIComponent(props.document.slug)}`}>
-            <x.a
-              color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
-              cursor="pointer"
-              textDecoration="underline"
-            >
-              {props.document.linkText ? props.document.linkText : 'read more'} <Arrow />
-            </x.a>
-          </NextLink>
-        )
+    case 'custom':
+      return (
+        <NextLink href={`/${encodeURIComponent(props.document.slug)}`}>
+          <x.a
+            color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
+            cursor="pointer"
+            textDecoration="underline"
+          >
+            {props.document.linkText ? props.document.linkText : 'read more'}{' '}
+            <Arrow />
+          </x.a>
+        </NextLink>
+      )
     default:
       // @ts-ignore
-      console.warn(`Link for type "${props.document._type}" is missing or nonexistent!`)
+      console.warn(
+        `Link for type "${props.document._type}" is missing or nonexistent!`,
+      )
       return null
   }
 }

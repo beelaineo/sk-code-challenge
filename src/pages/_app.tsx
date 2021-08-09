@@ -1,6 +1,11 @@
 import * as React from 'react'
 import { NextRouter } from 'next/router'
-import { x, defaultTheme, ThemeProvider, Preflight } from '@xstyled/styled-components'
+import {
+  x,
+  defaultTheme,
+  ThemeProvider,
+  Preflight,
+} from '@xstyled/styled-components'
 import Head from 'next/head'
 
 const { useEffect } = React
@@ -24,7 +29,7 @@ const theme = {
     mono: `ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace`,
     serif: serif,
     sans: sans,
-  }
+  },
 }
 
 const App = (props: AppProps) => {
@@ -41,7 +46,12 @@ const App = (props: AppProps) => {
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
         />
       </Head>
-      <x.main p={'10'} backgroundColor="gray-100" fontFamily={serif} fontWeight="light">
+      <x.main
+        p={'10'}
+        backgroundColor="gray-100"
+        fontFamily={serif}
+        fontWeight="light"
+      >
         <Component {...pageProps} />
       </x.main>
     </ThemeProvider>
