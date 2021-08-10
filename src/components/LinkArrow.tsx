@@ -13,7 +13,7 @@ const Arrow = () => {
       width="31px"
       height="8.178px"
       viewBox="0 0 31 8.178"
-      enable-background="new 0 0 31 8.178"
+      enableBackground="new 0 0 31 8.178"
       xmlSpace="preserve"
     >
       <polygon points="25.92,0.732 28.993,3.589 0,3.589 0,4.589 28.993,4.589 25.92,7.445 26.602,8.178 31,4.089 26.602,0 " />
