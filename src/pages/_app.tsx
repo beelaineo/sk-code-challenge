@@ -8,8 +8,6 @@ import {
 } from '@xstyled/styled-components'
 import Head from 'next/head'
 
-const { useEffect } = React
-
 interface AppProps {
   Component: React.ComponentType
   pageProps: any
@@ -47,10 +45,11 @@ const App = (props: AppProps) => {
         />
       </Head>
       <x.main
-        p={'10'}
+        p='2rem'
         backgroundColor="gray-100"
         fontFamily={serif}
         fontWeight="light"
+        minHeight="100vh"
       >
         <Component {...pageProps} />
       </x.main>
