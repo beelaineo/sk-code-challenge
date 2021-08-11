@@ -9,26 +9,27 @@ interface PageProps {
 
 export const Page: React.FC<PageProps> = (props) => {
   return (
-    <x.div minHeight="calc(100vh - 4rem)" display="flex" flexDirection="column" justifyContent="space-between">
-
+    <x.div
+      minHeight="calc(100vh - 4rem)"
+      display="flex"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
       <x.h1 fontSize={20} fontWeight="normal">
         {props.document.title}
       </x.h1>
 
       <x.div mt={3} fontSize={16} textAlign="center">
-        <NextLink
-            href="/"
+        <NextLink href="/">
+          <x.a
+            color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
+            cursor="pointer"
+            textDecoration="underline"
           >
-            <x.a
-              color={{ _: 'gray-800', hover: 'black', visited: 'gray-600' }}
-              cursor="pointer"
-              textDecoration="underline"
-            >
-              back to home
-            </x.a>
-          </NextLink>
+            back to home
+          </x.a>
+        </NextLink>
       </x.div>
-
     </x.div>
   )
 }

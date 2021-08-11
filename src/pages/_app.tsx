@@ -45,7 +45,7 @@ const App = (props: AppProps) => {
         />
       </Head>
       <x.main
-        p='2rem'
+        p="2rem"
         backgroundColor="gray-100"
         fontFamily={serif}
         fontWeight="light"
