@@ -1,6 +1,9 @@
 
 ## Link Card Challenge
 
+### Vercel deployment:
+[https://sk-code-challenge.vercel.app/](https://sk-code-challenge.vercel.app/)
+
 Using the provided [Sketch file](https://www.dropbox.com/s/fupmqvi363vluft/SK-code-challenge.sketch?dl=0), build Link Cards for the data provided in `HomeView.tsx`.
 
 Spend an hour and a half working on this. Some things to keep in mind:
