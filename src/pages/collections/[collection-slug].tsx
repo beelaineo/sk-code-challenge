@@ -1,3 +1,4 @@
+import * as React from 'react'
 import { Page as Content } from '../../components/Page'
 import { mockCollectionOne, mockCollectionTwo } from '../../data/collection'
 
